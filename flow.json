@@ -1,1 +1,67 @@
-[]
+[
+    {
+        "id": "f6e2c549c1d01ce3",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "72e5a8d9d7e59966",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cd9306a6d1dcc345",
+        "type": "template",
+        "z": "f6e2c549c1d01ce3",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "plain",
+        "template": "\n<html>\n    <head>\n        <title>Test www 2</title>\n    </head>\n    <body>\n        <h1>Test www 2</h1>\n        <p>This from:</p>\n        <ul>\n            <li>Local docker dev</li>\n            <li>NodeRed container</li>\n            <li>NodeRed project with Git</li>\n            <li>Code versioning on GitHub</li>\n        </ul>\n    </body>\n</html>",
+        "output": "str",
+        "x": 340,
+        "y": 240,
+        "wires": [
+            [
+                "c244ca61973d1b31"
+            ]
+        ]
+    },
+    {
+        "id": "dba483b7073c1b98",
+        "type": "http in",
+        "z": "f6e2c549c1d01ce3",
+        "name": "",
+        "url": "/www",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "cd9306a6d1dcc345"
+            ]
+        ]
+    },
+    {
+        "id": "c244ca61973d1b31",
+        "type": "http response",
+        "z": "f6e2c549c1d01ce3",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "text/html"
+        },
+        "x": 520,
+        "y": 240,
+        "wires": []
+    }
+]
