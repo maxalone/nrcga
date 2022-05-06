@@ -19,7 +19,7 @@ jobs:
       - name: Docker Registry
         env:
           DOCKER_ACCESS_TOKEN: ${{ secrets.DOCKER_ACCESS_TOKEN  }}
-        run: docker login -u $DOCKER_USERNAME -p $83c7ff01-395a-4430-9aa3-8a612e58d09c
+        run: docker login -u $DOCKER_USERNAME -p $DOCKER_ACCESS_TOKEN
 
       - name: Building Docker Image
         run: docker build --build-arg HUGO_VERSION=$HUGO_VERSION --no-cache
