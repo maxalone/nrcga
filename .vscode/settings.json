@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///c%3A/Users/maxc/Desktop/tangram/docker/volumes/NRdata/projects/noderedcontainergitazure/.github/workflows/dockerimage.yaml"
+    }
+}
