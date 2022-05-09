@@ -1,0 +1,30 @@
+name: "Docker Image CI"
+
+env:
+  HUGO_VERSION: "0.55.5"
+  CONTAINER_IMAGE_NAME: "hugo-docker"
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Docker Registry
+        env:
+          DOCKER_ACCESS_TOKEN: ${{ secrets.DOCKER_ACCESS_TOKEN  }}
+        run: docker login -u $DOCKER_USERNAME -p $DOCKER_ACCESS_TOKEN
+
+      - name: Building Docker Image
+        run: docker build --build-arg HUGO_VERSION=$HUGO_VERSION --no-cache
+          -t $DOCKER_USERNAME/$CONTAINER_IMAGE_NAME:$HUGO_VERSION-$GITHUB_RUN_ID
+          -t $DOCKER_USERNAME/$CONTAINER_IMAGE_NAME:latest .
+
+      - name: Push Docker Container to Registry
+        run: docker push $DOCKER_USERNAME/$CONTAINER_IMAGE_NAME
