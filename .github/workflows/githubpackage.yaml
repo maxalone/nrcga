@@ -19,7 +19,7 @@ jobs:
 
       - name: Docker Registry
         env:
-          DOCKER_ACCESS_TOKEN: ${{ secrets.DOCKER_ACCESS_TOKEN  }}
+          DOCKER_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_ACCESS_TOKEN $DOCKER_REGISTRY
 
       - name: Building Docker Image
