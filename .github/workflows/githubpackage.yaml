@@ -32,4 +32,8 @@ jobs:
           -t $DOCKER_REGISTRY/$REPOSITORY/nrcga:latest .
 
       - name: Push Docker Container to Registry
-        run: docker push $DOCKER_USERNAME/$CONTAINER_IMAGE_NAME
+        run: |
+          # Change all uppercase to lowercase
+          GITHUB_REPOSITORY=$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')
+
+          docker push $DOCKER_REGISTRY/$GITHUB_REPOSITORY/nrcga
