@@ -32,7 +32,7 @@ jobs:
           -t $DOCKER_REGISTRY/$REPOSITORY/nrcga:latest .
 
       - name: Push Docker Container to Registry
-        run: |
+        run:
           # Change all uppercase to lowercase
           GITHUB_REPOSITORY=$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')
 
