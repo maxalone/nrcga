@@ -23,7 +23,7 @@ jobs:
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_ACCESS_TOKEN $DOCKER_REGISTRY
 
       - name: Building Docker Image
-        run: |
+        run:
           # Change all uppercase to lowercase
           REPOSITORY=$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')  
 
