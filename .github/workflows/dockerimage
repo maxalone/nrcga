@@ -31,4 +31,4 @@ jobs:
           # Change all uppercase to lowercase
           GITHUB_REPOSITORY=$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')
 
-          docker push $DOCKER_REGISTRY/$GITHUB_REPOSITORY/hugo-docker
+          docker push $DOCKER_REGISTRY/$GITHUB_REPOSITORY/nrcga
