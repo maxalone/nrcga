@@ -5,7 +5,7 @@ USER node-red
 WORKDIR /data/node-red
 COPY package.json /data/node-red/package.json
 COPY flow.json /data/node-red/flows.json
-COPY settings.js /data/node-red/settings.js
+COPY settings.js /usr/src/node-red/.node-red/settings.js
 COPY flow_cred.json /data/node-red/flow_cred.json
 
 
