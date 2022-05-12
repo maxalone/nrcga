@@ -27,7 +27,7 @@
         "template": "\n<html>\n    <head>\n        <title>Test www 2</title>\n    </head>\n    <body>\n        <h1>Test www 2</h1>\n        <p>This from:</p>\n        <ul>\n            <li>Local docker dev</li>\n            <li>NodeRed container</li>\n            <li>NodeRed project with Git</li>\n            <li>Code versioning on GitHub</li>\n        </ul>\n    </body>\n</html>",
         "output": "str",
         "x": 340,
-        "y": 240,
+        "y": 220,
         "wires": [
             [
                 "c244ca61973d1b31"
