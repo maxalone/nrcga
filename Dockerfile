@@ -1,13 +1,14 @@
 FROM nodered/node-red
+USER root
+RUN apk upgrade --available
+
 WORKDIR /data
 COPY package.json .
-
 COPY flow.json .
 COPY settings.js .
 COPY flow_cred.json .
-USER root
-RUN apk upgrade --available
+
 USER node-red
 RUN ls -la /data/
 ENV TZ=Europe/Amsterdam
-ENTRYPOINT [ "node-red" ]
+ENTRYPOINT [ "node-red-docker@2.2.2", "start", "/usr/src/node-red" ]
