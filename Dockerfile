@@ -4,7 +4,7 @@ COPY package.json .
 RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
 COPY flow.json .
 COPY settings.js .
-COPY flow-cred.json .
+COPY flow_cred.json .
 USER root
 RUN apt-get update
 USER node-red
