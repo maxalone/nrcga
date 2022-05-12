@@ -11,4 +11,4 @@ COPY flow_cred.json .
 USER node-red
 RUN ls -la /data/
 ENV TZ=Europe/Amsterdam
-ENTRYPOINT [ "node-red-docker@2.2.2", "start", "/usr/src/node-red" ]
+ENTRYPOINT [ "node-red", "start", "/usr/src/node-red" ]
