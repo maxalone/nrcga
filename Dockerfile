@@ -1,7 +1,7 @@
 FROM nodered/node-red
-USER root
+
 RUN apk upgrade --available
-USER node-red
+
 WORKDIR /data/node-red
 COPY package.json /data/node-red/package.json
 COPY flow.json /data/node-red/flows.json
