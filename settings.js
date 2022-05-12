@@ -41,7 +41,8 @@
          * node-red from being able to decrypt your existing credentials and they will be
          * lost.
          */
-        //credentialSecret: "a-secret-key",
+         credentialSecret: process.env.NODE_RED_CREDENTIAL_SECRET,
+         
     
         /** By default, the flow JSON will be formatted over multiple lines making
          * it easier to compare changes when using version control.
@@ -77,7 +78,7 @@
             type: "credentials",
             users: [{
                 username: "admin",
-                password: "$2b$08$vj31f5zjKnRCedHK8AZlo.e.DEd3XFyLa0ViKoVJHgn79svHcwg/W",
+                password: this.credentialSecret,
                 permissions: "*"
             }]
         },
