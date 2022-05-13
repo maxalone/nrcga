@@ -1,6 +1,6 @@
 FROM nodered/node-red
-
-
+USER root
+RUN apk upgrade --available
 
 WORKDIR /data/node-red
 COPY package.json /data/node-red/package.json
